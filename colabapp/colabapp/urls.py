@@ -14,9 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+#URLS.PY DE COLABAPP
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from academy.views import v_index
 
 urlpatterns = [
+    path('', v_index),
     path('admin/', admin.site.urls),
+
+    path('academy/', include('academy.urls')), #Modulo
+    path('security/', include('security.urls')), #Modulo
 ]
