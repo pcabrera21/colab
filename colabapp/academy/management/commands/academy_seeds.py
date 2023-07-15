@@ -28,6 +28,8 @@ class Command(BaseCommand):
     def seeds_teacher(self, mode):
         if mode == "load" and Teacher.objects.all().count() <= 0:
             t = Teacher()
+            t.username = "pepito"
+            t.set_password = "123456"
             t.first_name = "Pepito"
             t.last_name = "Alcachofa"
             t.email = "palcachofa@academy.edu"
@@ -35,6 +37,8 @@ class Command(BaseCommand):
             t.save()
 
             t = Teacher()
+            t.username = "juanito"
+            t.set_password = "123456"
             t.first_name = "Juanito"
             t.last_name = "Picante"
             t.email = "jpicante@academy.edu"
@@ -47,12 +51,16 @@ class Command(BaseCommand):
     def seeds_student(self, mode):
         if mode == "load" and Student.objects.all().count() <= 0:
             s = Student()
+            s.username = "carlitos"
+            s.set_password = "123456"
             s.first_name = "Carlitos"
             s.last_name = "Nuñez"
             s.email = "cnunez@academy.edu"
             s.save()
 
             s = Student()
+            s.username = "luchito"
+            s.set_password = "123456"
             s.first_name = "Luchito"
             s.last_name = "Perez"
             s.email = "lperez@academy.edu"
@@ -65,12 +73,12 @@ class Command(BaseCommand):
         if mode == "load" and Course.objects.all().count() <= 0:
             c = Course()
             c.name = "BD1"
-            c.desription = "Descripcion curso"
+            c.description = "Descripcion curso"
             c.save()
 
             c = Course()
             c.name = "BD2"
-            c.desription = "Descripcion curso"
+            c.description = "Descripcion curso"
             c.save()
 
         elif mode == "clear":
